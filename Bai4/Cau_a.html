@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4-Cau A</title>
+</head>
+<body>
+<form action="">
+    <label for="length">Nhap vao canh hinh vuong = </label>
+    <input type="text" id="length">
+    <button type="button" onclick="cal()">Click me!</button>
+    <p id="output"></p>
+</form>
+
+<script>
+    function cal() {
+        let length = document.getElementById('length').value;
+        length = parseFloat(length);
+        let chuvi = length * 4;
+        let dientich = length * length;
+        document.getElementById('output').innerHTML = "S= " + dientich + " Chu vi=" +chuvi;
+    }
+</script>
+</body>
+</html>

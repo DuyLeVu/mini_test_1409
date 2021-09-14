@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 4-Cau D</title>
+</head>
+<body>
+<form action="">
+    <label for="year">Nhap vao nam = </label>
+    <input type="text" id="year">
+    <button type="button" onclick="cal()">Click me!</button>
+    <p id="output"></p>
+</form>
+
+<script>
+    function cal() {
+        let year = document.getElementById('year').value;
+        year = parseInt(year);
+        let theky;
+        if (year % 100 == 0) theky = year / 100;
+        else theky = year/100 + 1;
+        document.getElementById('output').innerHTML = "Nam= " + year + " thuoc the ky " +theky.toFixed(0);
+    }
+</script>
+</body>
+</html>

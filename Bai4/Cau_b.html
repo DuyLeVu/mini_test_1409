@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bai3</title>
+    <title>Bai 4 - Cau B</title>
 </head>
 <body>
-<!--Để nhận vào giá trị từ 1 ô input, sử dụng câu lệnh document.getElementbyId().value-->
 <form action="">
     <label for="soA">A = </label>
     <input type="text" id="soA">
     <label for="soB">B = </label>
     <input type="text" id="soB">
-     <button type="button" onclick="cal()">A * B</button>
+    <button type="button" onclick="cal()">Click me!</button>
     <h1 id="output"></h1>
 </form>
 
 <script>
-        function cal() {
+    function cal() {
         let a = document.getElementById('soA').value;
         let b = document.getElementById('soB').value;
         a = parseInt(a);
         b = parseInt(b);
-        let tong = a * b;
-        document.getElementById('output').innerHTML = "S= " + tong;
+        let aBinhPhuong = a ** 2;
+        let aMuB = a ** b;
+        document.getElementById('output').innerHTML = "a^2 = " + aBinhPhuong + " a^b = " +aMuB;
     }
 </script>
 </body>
