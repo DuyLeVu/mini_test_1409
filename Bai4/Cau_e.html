@@ -19,14 +19,22 @@
     function cal() {
         let a = document.getElementById('soA').value;
         let b = document.getElementById('soB').value;
-        let c = document.getElementById('soB').value;
-        a = parseInt(a);
-        b = parseInt(b);
-        b = parseInt(c);
+        let c = document.getElementById('soC').value;
+        a = parseFloat(a);
+        b = parseFloat(b);
+        c = parseFloat(c);
+        let isTriangle = ((a + b) > c && (a + c) > b && (b + c) > a);
+        let isEquilateralTriangle = ((a + b) > c && (a + c) > b && (b + c) > a) && ( a==b && b==c);
+        let isIsoscelesTriangle = ((a + b) > c && (a + c) > b && (b + c) > a) && ( a==b || b==c || a==c);
+        let isRightAngledTriangle = ((a + b) > c && (a + c) > b && (b + c) > a) && (a**2 == (b**2 + c**2) || b**2 == (a**2 + c**2) || c**2 == (b**2 + a**2));
         if (a, b, c > 0)
         {
-            if ((a + b) > c || (a + c) > b || (b + c) > a) document.getElementById('output').innerHTML = 'Day la ba canh cua tam giac';
-            else document.getElementById('output').innerHTML = 'Day khong phai la ba canh cua tam giac';}
+            if (isRightAngledTriangle) document.getElementById('output').innerHTML = 'Day la ba canh cua tam giac vuong';
+            else if (isEquilateralTriangle) document.getElementById('output').innerHTML = 'Day la ba canh cua tam giac deu';
+                else  if (isIsoscelesTriangle) document.getElementById('output').innerHTML = 'Day la ba canh cua tam giac can';
+                 else if (isTriangle) document.getElementById('output').innerHTML = 'Day la ba canh cua tam giac';
+                    else  document.getElementById('output').innerHTML = 'Day khong phai la ba canh cua tam giac';
+        }
         else document.getElementById('output').innerHTML = 'So canh khong hop le';
     }
 
